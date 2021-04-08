@@ -67,7 +67,36 @@ class CustomerSystem{
     * The method may not nesessarily be a void return type
     * This method may also be broken down further depending on your algorithm
     */
-    public static void validatePostalCode(){
+    public static boolean validatePostalCode(boolean found, String postalCode){
+        BufferedReader objReader = null;
+        String fileName = "postal_codes.csv";
+        String filePath = "C:\\Users\\Ubaid Khan\\Downloads\\";
+        try{
+            String currentLine;
+            objReader = new BufferedReader(new FileReader(filePath + fileName));
+
+            while((currentLine = objReader.readLine()) != null) {
+                if(currentLine.startsWith(postalCode)) {
+                    found = true;
+                }
+            }
+        }
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                if(objReader != null) {
+                    objReader.close();
+                }
+            }
+            
+            catch(IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        return found;
     }
     /*
     * This method may be edited to achieve the task however you like.
