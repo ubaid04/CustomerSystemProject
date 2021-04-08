@@ -34,6 +34,7 @@ class CustomerSystem{
             }
             else if (userInput.equals(generateCustomerOption)) {
                 // Only the line below may be editted based on the parameter list and how you design the method return
+                //Call the method which is responsible for making a csv file
                 generateCustomerDataFile();
             }
             else{
@@ -69,33 +70,38 @@ class CustomerSystem{
     */
     public static boolean validatePostalCode(boolean found, String postalCode){
         BufferedReader objReader = null;
+        //The file to look for and read from
         String fileName = "postal_codes.csv";
         String filePath = "C:\\Users\\Ubaid Khan\\Downloads\\";
         try{
             String currentLine;
             objReader = new BufferedReader(new FileReader(filePath + fileName));
 
+            //Read the file line to line 
             while((currentLine = objReader.readLine()) != null) {
+                //Check to see if the line starts with the given postal code
                 if(currentLine.startsWith(postalCode)) {
                     found = true;
                 }
             }
         }
+        //This will sort out any given errors and exceptions
         catch(IOException e) {
             e.printStackTrace();
         }
         finally{
             try{
+                //Close reader
                 if(objReader != null) {
                     objReader.close();
                 }
             }
-            
+            //Handle any errors that occur
             catch(IOException ex) {
                 ex.printStackTrace();
             }
         }
-
+        //Return if the postal code was real or not
         return found;
     }
     /*
@@ -111,8 +117,10 @@ class CustomerSystem{
     * This method may also be broken down further depending on your algorithm
     */
     public static void generateCustomerDataFile(){
-       
+        //Initialize and declare Scanner
         Scanner reader = new Scanner(System.in);
+
+        //Ask where the user wants to store the file
         System.out.println("How do you like to name the file:");
         String fileName = reader.nextLine();
         System.out.println("Where do you want to store the file:");
@@ -120,8 +128,11 @@ class CustomerSystem{
 
         String fileLocation = filePath.concat("\\" + fileName);
         
+        //Creating a unique id value with using the uniqueCustomerValue method
         String idValue = "";
         idValue = uniqueCustomerValues(idValue);
+
+        //Ask required information to create a csv file
         System.out.println("Postal code:");
         String postalCode = reader.nextLine();
         System.out.println("First name:");
@@ -135,6 +146,7 @@ class CustomerSystem{
 
         try{
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileLocation));
+            //Write the information in the file
             bw.write("ID value,First Name,Last Name,City,Postal Code,Credit Card Number \n");
             bw.write(idValue + ",");
             bw.write(firstName + ",");
@@ -145,10 +157,12 @@ class CustomerSystem{
             bw.close();
         }
 
+        //Handle any errors
         catch(Exception ex) {
             ex.printStackTrace();
         }
-
+        
+        //Letting the user know that the file was created successfully
         System.out.println("Data file created");
 
     }
@@ -156,7 +170,7 @@ class CustomerSystem{
     *       ADDITIONAL METHODS MAY BE ADDED BELOW IF NECESSARY         *
     *******************************************************************/
 
-    public static String uniqueCustomerValues(String idValue){
+    public static String uniqueCustomerValue(String idValue){
         return idValue  = "5";
     }
 }
