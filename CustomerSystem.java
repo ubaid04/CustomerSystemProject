@@ -111,8 +111,52 @@ class CustomerSystem{
     * This method may also be broken down further depending on your algorithm
     */
     public static void generateCustomerDataFile(){
+       
+        Scanner reader = new Scanner(System.in);
+        System.out.println("How do you like to name the file:");
+        String fileName = reader.nextLine();
+        System.out.println("Where do you want to store the file:");
+        String filePath = reader.nextLine();
+
+        String fileLocation = filePath.concat("\\" + fileName);
+        
+        String idValue = "";
+        idValue = uniqueCustomerValues(idValue);
+        System.out.println("Postal code:");
+        String postalCode = reader.nextLine();
+        System.out.println("First name:");
+        String firstName = reader.nextLine();
+        System.out.println("Last name:");
+        String lastName = reader.nextLine();
+        System.out.println("City:");
+        String city = reader.nextLine();
+        System.out.println("Credit Card");
+        String creditCard = reader.nextLine();
+
+        try{
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fileLocation));
+            bw.write("ID value,First Name,Last Name,City,Postal Code,Credit Card Number \n");
+            bw.write(idValue + ",");
+            bw.write(firstName + ",");
+            bw.write(lastName + ",");
+            bw.write(city + ",");
+            bw.write(postalCode + ",");
+            bw.write(creditCard + ",");
+            bw.close();
+        }
+
+        catch(Exception ex) {
+            ex.printStackTrace();
+        }
+
+        System.out.println("Data file created");
+
+        reader.close();
     }
     /*******************************************************************
     *       ADDITIONAL METHODS MAY BE ADDED BELOW IF NECESSARY         *
     *******************************************************************/
+
+    public static String uniqueCustomerValues(String idValue){
+    }
 }
