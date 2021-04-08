@@ -1,5 +1,6 @@
 // Throughout this project, the use of data structures are not permitted such as methods like .split and .toCharArray
 
+//
 
 
 
@@ -64,9 +65,9 @@ class CustomerSystem{
     public static void enterCustomerInfo() {
     }
     /*
-    * This method may be edited to achieve the task however you like.
-    * The method may not nesessarily be a void return type
-    * This method may also be broken down further depending on your algorithm
+    * Overview: This method will takes the postalCode and check if it is real or is it fake
+    * @parameters:boolean found,String postalCode
+    * @return: It will return a boolean
     */
     public static boolean validatePostalCode(boolean found, String postalCode){
         BufferedReader objReader = null;
@@ -112,9 +113,9 @@ class CustomerSystem{
     public static void validateCreditCard(){
     }
     /*
-    * This method may be edited to achieve the task however you like.
-    * The method may not nesessarily be a void return type
-    * This method may also be broken down further depending on your algorithm
+    * Overview: This method will create a customer file which contains all their data
+    * @parameters: no parameters
+    * @return: it returns nothing at it is a void method
     */
     public static void generateCustomerDataFile(){
         //Initialize and declare Scanner
@@ -170,6 +171,11 @@ class CustomerSystem{
     *       ADDITIONAL METHODS MAY BE ADDED BELOW IF NECESSARY         *
     *******************************************************************/
 
+    /*
+    * Overview: This method will craete a unique id to every customer
+    * @Parameters: String idValue
+    * @return: idValue
+    */
     public static String uniqueCustomerValue(String idValue){
         return idValue  = "5";
     }
