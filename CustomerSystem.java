@@ -151,12 +151,12 @@ class CustomerSystem{
 
         System.out.println("Data file created");
 
-        reader.close();
     }
     /*******************************************************************
     *       ADDITIONAL METHODS MAY BE ADDED BELOW IF NECESSARY         *
     *******************************************************************/
 
     public static String uniqueCustomerValues(String idValue){
+        return idValue  = "5";
     }
 }
