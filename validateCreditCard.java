@@ -8,7 +8,7 @@
 class validateCreditCard{
 public static void main(String [] args){
     // Variable for the Credit Card Number
-    String creditCard;
+    String creditCard = "56565";
     // Checks to see if it's valid using Luhn
     System.out.println(checkLuhn(creditCard));
 }
