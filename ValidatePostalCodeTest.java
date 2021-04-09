@@ -14,11 +14,7 @@ class ValidatePostalCodeTest {
         System.out.println(found); 
     }
     
-    /*
-    * Overview: This method will takes the postalCode and check if it is real or is it fake
-    * @parameters:boolean found,String postalCode
-    * @return: It will return a boolean
-    */
+    
     public static boolean read(boolean found, String postalCode){
         BufferedReader objReader = null;
         //file location 
