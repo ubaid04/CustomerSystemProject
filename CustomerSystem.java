@@ -7,6 +7,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.UUID;
 
 class CustomerSystem{
     public static void main(String[] args){
@@ -173,6 +174,9 @@ class CustomerSystem{
     * @return: idValue
     */
     public static String uniqueCustomerValue(String idValue){
-        return idValue  = "5";
+        UUID uniqueId = UUID.randomUUID();
+        String id = ("1" + uniqueId);
+        
+        return id;
     }
 }
