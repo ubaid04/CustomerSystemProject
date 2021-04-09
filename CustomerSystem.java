@@ -131,7 +131,7 @@ class CustomerSystem{
         
         //Creating a unique id value with using the uniqueCustomerValue method
         String idValue = "";
-        idValue = uniqueCustomerValues(idValue);
+        idValue = uniqueCustomerValue(idValue);
 
         //Ask required information to create a csv file
         System.out.println("Postal code:");
