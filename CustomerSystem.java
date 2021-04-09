@@ -1,9 +1,5 @@
 // Throughout this project, the use of data structures are not permitted such as methods like .split and .toCharArray
 
-//
-
-
-
 import java.util.Scanner;
 // More packages may be imported in the space below
 import java.io.BufferedReader;
