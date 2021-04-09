@@ -55,11 +55,31 @@ class CustomerSystem{
         );
     }
     /*
-    * This method may be edited to achieve the task however you like.
-    * The method may not nesessarily be a void return type
-    * This method may also be broken down further depending on your algorithm
-    */
+     * @param enterCustomerInfo allows user to input their information
+     */
     public static void enterCustomerInfo() {
+        // Initializes Scanner
+        Scanner reader = new Scanner (System.in);
+        
+        boolean found = false;
+
+        // Promps user for their first name, last name, city, postal code, and credit card number and stores it in a variable
+        System.out.println("What is your first name?");
+        String firstName = reader.nextLine();
+        
+        System.out.println("What is your last name?");
+        String lastName = reader.nextLine();
+        
+        System.out.println("What city do you live in?");
+        String city = reader.nextLine();
+        while(found != true) {
+          System.out.println("What is your postal code?");
+          String postalCode = reader.nextLine();
+          found = validatePostalCode(found,postalCode);
+        }
+
+        System.out.println("What is your credit card number?");
+        String creditCard = reader.nextLine();
     }
     /*
     * Overview: This method will takes the postalCode and check if it is real or is it fake
