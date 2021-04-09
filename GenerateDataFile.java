@@ -32,6 +32,11 @@ class GenerateDataFile {
         reader.close();
     }
     
+     /*
+    * Overview: This method will create a data file
+    * @parameters: String idValue, String postalCode, String firstName, String lastName, String city, String creditCard, String fileLocation
+    * return: This method will not return as it is a void method
+    */
     public static void createDataFile(String idValue, String postalCode, String firstName, String lastName, String city, String creditCard, String fileLocation) {
 
         try{
