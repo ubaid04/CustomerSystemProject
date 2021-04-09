@@ -127,7 +127,7 @@ class CustomerSystem{
     * The method may not nesessarily be a void return type
     * This method may also be broken down further depending on your algorithm
     */
-    public static void validateCreditCard(){
+    public static void validateCreditCard(String creditCard){
     }
     /*
     * Overview: This method will create a customer file which contains all their data
@@ -149,10 +149,15 @@ class CustomerSystem{
         //Creating a unique id value with using the uniqueCustomerValue method
         String idValue = "";
         idValue = uniqueCustomerValue(idValue);
-        
+
+        boolean found = false;
+        String postalCode = "";
         //Ask required information to create a csv file
-        System.out.println("Postal code:");
-        String postalCode = reader.nextLine();
+        while(found != true) {
+            System.out.println("What is your postal code?");
+            postalCode = reader.nextLine();
+            found = validatePostalCode(found,postalCode);
+          }
         System.out.println("First name:");
         String firstName = reader.nextLine();
         System.out.println("Last name:");
