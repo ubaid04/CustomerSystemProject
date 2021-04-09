@@ -30,7 +30,6 @@ import java.io.FileWriter;
         
         //setting necessary variables
         String idValue = "2004";
-        String postalCode = "S4D";
         String firstName = "Ubaid";
         String lastName = "Khan";
         String city = "Markham";
