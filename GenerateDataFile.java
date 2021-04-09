@@ -31,7 +31,12 @@ class GenerateDataFile {
 
         reader.close();
     }
-
+    
+     /*
+    * Overview: This method will create a customer file which contains all their data
+    * @parameters: no parameters
+    * @return: it returns nothing at it is a void method
+    */
     public static void createDataFile(String idValue, String postalCode, String firstName, String lastName, String city, String creditCard, String fileLocation) {
 
         try{
